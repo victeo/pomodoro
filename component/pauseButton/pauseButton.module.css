@@ -1,0 +1,19 @@
+.button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    display: inline-block;
+    width: 100%;
+    font-size: 5rem;
+    margin-top: 25px;
+}
+.button:hover {
+    background-color: transparent;
+    color: #219653;
+    cursor: pointer;
+    transition: ease-in-out 0.2s;
+}
+
+.button svg {
+    width: 100px;
+}
