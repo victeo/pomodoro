@@ -1,7 +1,7 @@
 //import circularProgressbar
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import PlayButton from "./playButton/playButton";
+import PlayButton from "../playButton/playButton";
 
 // import styles
 import styles from "./timer.module.css";
