@@ -8,22 +8,23 @@ import styles from "../styles/Home.module.css";
 //importe useStates <- Aqui começa a brincadeira
 
 import { useState } from "react";
+import SettingsContext from "../model/SettingsContext";
 
 export default function Home() {
+    var initialState = true;
 
-
-    var initialState = false;
 
     const [ShowSettings, setShowSettings] = useState(initialState, true); //no lugar da vírgula o vídeo coloca :
 
     return (
         <>
             <section className={styles.inicio}>
-                {ShowSettings ? <Settings /> : <Timer />}
-
-                <Link href="../config/" className={styles.btn}>
-                    <a> Configuração</a>
-                </Link>
+                <SettingsContext.Provider value={{
+                    workMinutes: 45,
+                    breakMinutes: 15,
+                }}>
+                    {ShowSettings ? <Settings /> : <Timer />}
+                </SettingsContext.Provider>
             </section>
         </>
     );
