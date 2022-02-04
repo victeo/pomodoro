@@ -1,12 +1,13 @@
 .button {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     background-color: transparent;
+    align-items: center;
     color: white;
     border: none;
     width: 100%;
+    height: 150px;
     font-size: 5rem;
-    align-items: center;
 }
 .button:hover {
     background-color: transparent;

@@ -11,17 +11,23 @@ import { useState } from "react";
 import SettingsContext from "../model/SettingsContext";
 
 export default function Home() {
-    var initialState = true;
+    var initialState = false;
 
 
     const [ShowSettings, setShowSettings] = useState(initialState, true); //no lugar da vírgula o vídeo coloca :
+    const [workMinutes, setWorkMinutes] = useState(initialState, 45);
+    const [breakMinutes, setBreakMinutes] = useState(initialState, 15);
 
     return (
         <>
             <section className={styles.inicio}>
                 <SettingsContext.Provider value={{
-                    workMinutes: 45,
-                    breakMinutes: 15,
+                    ShowSettings,
+                    setShowSettings,
+                    workMinutes,
+                    breakMinutes,
+                    setWorkMinutes,
+                    setBreakMinutes,
                 }}>
                     {ShowSettings ? <Settings /> : <Timer />}
                 </SettingsContext.Provider>

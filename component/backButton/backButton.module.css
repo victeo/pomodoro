@@ -1,0 +1,12 @@
+.btn {
+
+    background-color: var(--vt--azul--escuro);
+    color: white;
+    font-size: 2rem;
+    box-shadow: var(--vt-shadow);
+    border-radius: 15px;
+    padding: 15px 50px 15px 50px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+}

@@ -4,14 +4,34 @@ import "react-circular-progressbar/dist/styles.css";
 import PauseButton from "../pauseButton/pauseButton";
 import PlayButton from "../playButton/playButton";
 import SettingsButton from "../settingsButton/settingsButton";
+import { useContext, useState, useEffect } from "react";
+import SettingsContext from "../../model/SettingsContext";
 
 // import styles
 import styles from "./timer.module.css";
 
-const verde = "#219653";
-const amarelo = " #F2C94C";
-
 export default function Timer() {
+    const settingsInfo = useContext(SettingsContext);
+
+    var initialState;
+    var effect;
+    var deps;
+    var value;
+
+    const [isPaused, setIsPaused] = useState(initialState, false);
+
+    const [secondsLeft, setSecondsLeft] = useState(initialState, 0);
+
+    function initTimer() {
+        setSecondsLeft(value, settingsInfo.wokMinutes * 60);
+
+    }
+
+    useEffect(() => {
+            initTimer();
+        }, [settingsInfo]);
+
+
     return (
         <>
             <div className={styles.times__block}>
@@ -27,12 +47,13 @@ export default function Timer() {
                     />
                 </div>
                 <div className={styles.control}>
-                    <PlayButton />
-                    <PauseButton />
+                    {isPaused ? <PlayButton /> : <PauseButton />}
                 </div>
             </div>
             <div>
-                <SettingsButton />
+                <SettingsButton
+                    onClick={() => settingsInfo.setShowSettings(true)}
+                />
             </div>
         </>
     );
