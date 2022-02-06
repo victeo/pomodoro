@@ -10,11 +10,11 @@ export default function Settings() {
     const settingsInfo = useContext(SettingsContext);
     return (
         <>
-            <label className={styles.WorkAm}>
+            <label className={styles.WorkVer}>
                 Work minutes:{settingsInfo.workMinutes}:00
             </label>
             <ReactSlider
-                className={styles.sliderAm}
+                className={styles.sliderVer}
                 thumbClassName={styles.thumb}
                 trackClassName={"track"}
                 value={settingsInfo.workMinutes}
@@ -23,11 +23,11 @@ export default function Settings() {
                 max={120}
             />
 
-            <label className={styles.WorkVer}>
+            <label className={styles.WorkAm}>
                 Break minutes:{settingsInfo.breakMinutes}:00
             </label>
             <ReactSlider
-                className={styles.sliderVer}
+                className={styles.sliderAm}
                 thumbClassName={styles.thumb2}
                 trackClassName={"track"}
                 value={settingsInfo.breakMinutes}

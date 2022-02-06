@@ -27,14 +27,14 @@
 }
 
 .thumb{
-    background-color: var(--vt--amarelo);
+    background-color: var(--vt--verde);
     cursor:pointer;
     width: 37px;
     height: 37px;
     border-radius: 20px;
 }
 .thumb2{
-    background-color: var(--vt--verde);
+    background-color: var(--vt--amarelo);
     cursor:pointer;
     width: 37px;
     height: 37px;
